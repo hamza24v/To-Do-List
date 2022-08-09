@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+{% endblock %}
+
+
+
+{% block body %}
+<style>
+    table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    }
+
+    .center{
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    h1{text-align: center;}
+    
+</style>
+
+<div class="content"> <!-- div: divison/section in html doc, container for html element-->
+    
+    <h1 class = "center"> Update Task</h1> <!-- header -->
+
+    <div class="form">
+        <form action="/update/{{task.id}}" method="POST">
+            <input type="text" name="content" id="content" value="{{task.content}}"> 
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</div>
+{% endblock %}
